@@ -1,1 +1,105 @@
-hi
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webpage with Different Types of Frames</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    /* Floating frame */
+    .floating-frame {
+      width: 400px;
+      height: 300px;
+      border: 2px solid #4CAF50;
+      float: left;
+      margin: 20px;
+      overflow: auto;
+    }
+
+    /* Mixed frame */
+    .mixed-frame {
+      width: 400px;
+      height: 300px;
+      border: 2px solid #2196F3;
+      margin: 20px;
+      display: inline-block;
+      position: relative;
+    }
+
+    /* Navigation frame */
+    .navigation-frame {
+      width: 200px;
+      height: 100%;
+      background-color: #333;
+      float: left;
+      color: white;
+      padding: 10px;
+    }
+
+    .navigation-frame ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .navigation-frame ul li a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      padding: 10px;
+      border-bottom: 1px solid #444;
+    }
+
+    .navigation-frame ul li a:hover {
+      background-color: #575757;
+    }
+
+    /* Content */
+    .content {
+      margin-left: 220px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Webpage with Different Types of Frames</h1>
+
+  <!-- Floating Frame -->
+  <div class="floating-frame">
+    <h2>Floating Frame</h2>
+    <p>This is a floating frame that contains its own scrollable content.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vehicula dui sed feugiat facilisis.</p>
+    <p>Vivamus fermentum massa ut velit fringilla, ut pulvinar metus suscipit. Donec vitae sem turpis.</p>
+    <p>Curabitur at turpis at turpis bibendum tristique ac in ligula.</p>
+  </div>
+
+  <!-- Mixed Frame -->
+  <div class="mixed-frame">
+    <h2>Mixed Frame</h2>
+    <p>This is a mixed frame with both content and an embedded iframe.</p>
+    <iframe src="https://www.example.com" width="100%" height="100" title="Example Frame"></iframe>
+  </div>
+
+  <!-- Navigation Frame -->
+  <div class="navigation-frame">
+    <h2>Navigation</h2>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content Area -->
+  <div class="content">
+    <h2>Main Content</h2>
+    <p>This is the main content area. The navigation frame stays fixed on the left while you scroll through the content here.</p>
+    <p>Feel free to explore and navigate using the links in the navigation frame!</p>
+  </div>
+
+</body>
+</html>
