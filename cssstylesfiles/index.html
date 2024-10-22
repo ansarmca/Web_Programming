@@ -3,63 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Padding and Margin Types</title>
+    <title>Comprehensive CSS Example</title>
 
     <!-- External CSS -->
     <link rel="stylesheet" href="styles.css">
 
     <!-- Internal CSS -->
     <style>
-        /* Internal styles for padding and margin examples */
-        .box1 {
-            background-color: #ffeb3b;
-            padding: 20px;  /* Equal padding on all sides */
-            margin: 10px;   /* Equal margin on all sides */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e0e0e0;
+            margin: 0;
+            padding: 0;
         }
 
-        .box2 {
-            background-color: #8bc34a;
-            padding: 10px 20px; /* Vertical padding: 10px, Horizontal: 20px */
-            margin: 15px 30px;  /* Vertical margin: 15px, Horizontal: 30px */
-        }
-
-        .box3 {
-            background-color: #03a9f4;
-            padding: 10px 30px 20px 40px; /* Top, Right, Bottom, Left padding */
-            margin: 20px 40px 10px 30px;  /* Top, Right, Bottom, Left margin */
-        }
-
-        h2 {
+        header {
+            background-color: #333;
+            padding: 20px;
             text-align: center;
-            color: #333;
-            margin-bottom: 20px;
+            color: white;
         }
 
-        /* Flexbox container for boxes */
-        .container {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
+        .internal-box {
+            border: 2px solid #4CAF50;
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
         }
     </style>
 </head>
 <body>
 
     <!-- Inline CSS -->
-    <h2 style="color: blue;">CSS Padding and Margin Examples</h2>
+    <header style="font-size: 32px; letter-spacing: 2px;">
+        Welcome to the CSS Demonstration
+    </header>
 
-    <div class="container">
-        <!-- Inline CSS for padding and margin -->
-        <div class="box1" style="border: 2px solid black;">Box 1: Equal Padding and Margin</div>
-        <div class="box2">Box 2: Vertical/Horizontal Padding and Margin</div>
-        <div class="box3">Box 3: Different Padding and Margin on Each Side</div>
-    </div>
-
-    <div class="container">
-        <!-- More boxes using external CSS -->
-        <div class="box4">Box 4: External CSS Padding and Margin</div>
-        <div class="box5" style="border: 2px solid red;">Box 5: External CSS with Border</div>
-    </div>
-
-</body>
-</html>
+    <div class="internal-box">
+        <h2>This section uses Internal CSS</h2>
+        <p>The styles applied here are written inside the <code>&lt;style&gt;</code> tag in the <code>&lt;head&gt;</code> section of the HTM
