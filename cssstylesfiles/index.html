@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comprehensive CSS Example</title>
+    <title>CSS Example</title>
 
-    <!-- External CSS -->
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Internal CSS -->
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -33,15 +29,6 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
     </style>
 </head>
 <body>
@@ -53,7 +40,7 @@
 
     <div class="internal-box">
         <h2>This section uses Internal CSS</h2>
-        <p>The styles applied here are written inside the <code>&lt;style&gt;</code> tag in the <code>&lt;head&gt;</code> section of the HTML file.</p>
+        <p>The styles applied here are written inside the <code>style</code> tag in the <code>head</code> section of the HTML file.</p>
     </div>
 
     <div class="external-box">
@@ -65,10 +52,6 @@
         <h2>Inline CSS Example</h2>
         <p>This section is styled using inline CSS directly in the HTML elements via the <code>style</code> attribute.</p>
     </div>
-
-    <footer class="footer">
-        &copy; 2024 CSS Demonstration
-    </footer>
 
 </body>
 </html>
