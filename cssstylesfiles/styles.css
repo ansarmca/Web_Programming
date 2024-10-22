@@ -1,12 +1,27 @@
-/* External CSS styles for additional padding and margin types */
-.box4 {
-    background-color: #e91e63;
-    padding: 25px 15px 5px 35px; /* Top, Right, Bottom, Left padding */
-    margin: 25px 10px 5px 15px;  /* Top, Right, Bottom, Left margin */
+/* External CSS */
+.external-box {
+    border: 2px solid purple;
+    background-color: #f0f8ff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.box5 {
-    background-color: #9c27b0;
-    padding: 40px 20px;  /* Vertical: 40px, Horizontal: 20px */
-    margin: 50px 0;      /* Vertical: 50px, Horizontal: 0 */
+h2 {
+    color: darkblue;
+    font-size: 24px;
+}
+
+p {
+    font-size: 16px;
+    color: #555;
+}
+
+.external-box h2 {
+    color: purple;
+}
+
+.external-box p {
+    font-size: 18px;
 }
