@@ -3,40 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Example</title>
+    <title>CSS Padding and Margin Types</title>
 
     <!-- External CSS -->
     <link rel="stylesheet" href="styles.css">
 
     <!-- Internal CSS -->
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+        /* Internal styles for padding and margin examples */
+        .box1 {
+            background-color: #ffeb3b;
+            padding: 20px;  /* Equal padding on all sides */
+            margin: 10px;   /* Equal margin on all sides */
         }
 
-        .internal-style {
-            color: #4CAF50;
-            font-size: 20px;
-            margin: 20px 0;
+        .box2 {
+            background-color: #8bc34a;
+            padding: 10px 20px; /* Vertical padding: 10px, Horizontal: 20px */
+            margin: 15px 30px;  /* Vertical margin: 15px, Horizontal: 30px */
+        }
+
+        .box3 {
+            background-color: #03a9f4;
+            padding: 10px 30px 20px 40px; /* Top, Right, Bottom, Left padding */
+            margin: 20px 40px 10px 30px;  /* Top, Right, Bottom, Left margin */
         }
 
         h2 {
+            text-align: center;
             color: #333;
-            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        /* Flexbox container for boxes */
+        .container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
         }
     </style>
 </head>
 <body>
 
     <!-- Inline CSS -->
-    <h2 style="text-align: center; color: blue;">Welcome to the CSS Example Page</h2>
+    <h2 style="color: blue;">CSS Padding and Margin Examples</h2>
 
-    <p class="internal-style">This paragraph is styled using internal CSS.</p>
+    <div class="container">
+        <!-- Inline CSS for padding and margin -->
+        <div class="box1" style="border: 2px solid black;">Box 1: Equal Padding and Margin</div>
+        <div class="box2">Box 2: Vertical/Horizontal Padding and Margin</div>
+        <div class="box3">Box 3: Different Padding and Margin on Each Side</div>
+    </div>
 
-    <p class="external-style">This paragraph is styled using external CSS.</p>
-
-    <p style="color: red; font-weight: bold;">This paragraph is styled using inline CSS.</p>
+    <div class="container">
+        <!-- More boxes using external CSS -->
+        <div class="box4">Box 4: External CSS Padding and Margin</div>
+        <div class="box5" style="border: 2px solid red;">Box 5: External CSS with Border</div>
+    </div>
 
 </body>
 </html>
