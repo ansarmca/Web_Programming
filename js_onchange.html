@@ -15,10 +15,14 @@
     <p id="result"></p>
 
     <script>
+        const selectElement = document.getElementById('mySelect');
+        const resultElement = document.getElementById('result');
+
         function myFunction() {
-            var x = document.getElementById("mySelect").value;
-            document.getElementById("result").innerHTML = "You selected " + x;
-        }
+                  const selectElement = document.getElementById("mySelect");
+                  const selectedValue = selectElement.value;
+
+                  document.getElementById("result").innerHTML=selectedValue;
     </script>
 </body>
 </html>
