@@ -3,69 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Image and Text Hover Effect</title>
+  <title>Hover Effect</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #f0f0f0;
-    }
-    .content {
-      text-align: center;
-      padding: 20px;
-      border: 2px solid #333;
-      background-color: #fff;
-      transition: transform 0.2s;
-    }
     .hover-content {
       display: none;
       text-align: center;
-      margin-top: 10px;
-    }
-    .hover-content img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
-    .hover-content p {
-      margin-top: 10px;
-      font-size: 1.1em;
-      color: #555;
     }
   </style>
 </head>
 <body>
 
-<div class="content" id="mainContent">
+<div id="mainContent" onmouseover="showContent()" onmouseout="hideContent()">
   <h2>Hover over this content</h2>
-  <p>Move your mouse here to see the hidden content.</p>
 </div>
 
-<div class="hover-content" id="hoverContent">
-  <img src="https://via.placeholder.com/300" alt="New Image">
-  <p>This is the new text displayed on hover!</p>
+<div id="hoverContent" class="hover-content">
+  <img src="https://via.placeholder.com/150" alt="New Image">
+  <p>New text on hover!</p>
 </div>
 
 <script>
-  // Get elements by ID
-  const mainContent = document.getElementById('mainContent');
-  const hoverContent = document.getElementById('hoverContent');
+  function showContent() {
+    document.getElementById('hoverContent').style.display = 'block';
+  }
 
-  // Show new content on mouseover
-  mainContent.addEventListener('mouseover', () => {
-    hoverContent.style.display = 'block';
-    mainContent.style.transform = 'scale(1.05)';
-  });
-
-  // Hide new content on mouseout
-  mainContent.addEventListener('mouseout', () => {
-    hoverContent.style.display = 'none';
-    mainContent.style.transform = 'scale(1)';
-  });
+  function hideContent() {
+    document.getElementById('hoverContent').style.display = 'none';
+  }
 </script>
 
 </body>
