@@ -19,10 +19,9 @@
         const resultElement = document.getElementById('result');
 
         function myFunction() {
-                  const selectElement = document.getElementById("mySelect");
-                  const selectedValue = selectElement.value;
-
-                  document.getElementById("result").innerHTML=selectedValue;
+            const selectedValue = selectElement.value;
+            resultElement.innerHTML = "You selected " + selectedValue;
+        }
     </script>
 </body>
 </html>
