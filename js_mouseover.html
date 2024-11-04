@@ -1,33 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Mouseover Effect</title>
-    <style>
-        #myImage {
-            width: 200px;
-            height: 200px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image and Text Hover Effect</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+    .content {
+      text-align: center;
+      padding: 20px;
+      border: 2px solid #333;
+      background-color: #fff;
+      transition: transform 0.2s;
+    }
+    .hover-content {
+      display: none;
+      text-align: center;
+      margin-top: 10px;
+    }
+    .hover-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .hover-content p {
+      margin-top: 10px;
+      font-size: 1.1em;
+      color: #555;
+    }
+  </style>
 </head>
 <body>
 
-    <img id="myImage" src="your_image_url.jpg" alt="Original Image">
+<div class="content" id="mainContent">
+  <h2>Hover over this content</h2>
+  <p>Move your mouse here to see the hidden content.</p>
+</div>
 
-    <script>
-        let image = document.getElementById("myImage");
+<div class="hover-content" id="hoverContent">
+  <img src="https://via.placeholder.com/300" alt="New Image">
+  <p>This is the new text displayed on hover!</p>
+</div>
 
-        image.addEventListener("mouseover", function() {
-            image.src = "photo.jpeg"; // Replace with your new image URL
-            image.alt = "New Image";
-            image.title = "Hover to see the new image!";
-        });
+<script>
+  // Get elements by ID
+  const mainContent = document.getElementById('mainContent');
+  const hoverContent = document.getElementById('hoverContent');
 
-        image.addEventListener("mouseout", function() {
-            image.src = "images.png"; // Replace with your original image URL
-            image.alt = "Original Image";
-            image.title = "";
-        });
-    </script>
+  // Show new content on mouseover
+  mainContent.addEventListener('mouseover', () => {
+    hoverContent.style.display = 'block';
+    mainContent.style.transform = 'scale(1.05)';
+  });
+
+  // Hide new content on mouseout
+  mainContent.addEventListener('mouseout', () => {
+    hoverContent.style.display = 'none';
+    mainContent.style.transform = 'scale(1)';
+  });
+</script>
 
 </body>
 </html>
