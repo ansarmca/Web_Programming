@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouseover Effect</title>
+    <style>
+        #myImage {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    <img id="myImage" src="your_image_url.jpg" alt="Original Image">
+
+    <script>
+        let image = document.getElementById("myImage");
+
+        image.addEventListener("mouseover", function() {
+            image.src = "photo.jpeg"; // Replace with your new image URL
+            image.alt = "New Image";
+            image.title = "Hover to see the new image!";
+        });
+
+        image.addEventListener("mouseout", function() {
+            image.src = "images.png"; // Replace with your original image URL
+            image.alt = "Original Image";
+            image.title = "";
+        });
+    </script>
+
+</body>
+</html>
