@@ -2,6 +2,32 @@
 <html>
 <head>
   <title>Color Changing Button</title>
+  <style>
+    body {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2em; 
+      margin-bottom: 15px; 
+    }
+
+    /* Style the paragraph */
+    p {
+      font-size: 1.2em; 
+      margin-bottom: 10px; 
+    }
+
+    /* Style the button */
+    button {
+      background-color: #4CAF50; 
+      color: white; 
+      padding: 10px 20px; 
+      border: none; 
+      border-radius: 5px;
+      cursor: pointer; 
+    }
+  </style>
 </head>
 <body>
   <h1>Color Changing Button</h1>
@@ -10,7 +36,7 @@
   <button id="changeColorBtn" onclick="changeColor()">Change Color</button>
 
   <script>
-    let colorIndex = 0; 
+    let colorIndex = 0;
     const colors = ['yellow', 'green', 'blue', 'white'];
 
     function changeColor() {
