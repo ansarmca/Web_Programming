@@ -10,12 +10,12 @@
   <button id="changeColorBtn" onclick="changeColor()">Change Color</button>
 
   <script>
-    let colorIndex = 0; // Move colorIndex outside the function
+    let colorIndex = 0; 
     const colors = ['yellow', 'green', 'blue', 'white'];
 
     function changeColor() {
       document.body.style.backgroundColor = colors[colorIndex];
-      colorIndex = (colorIndex + 1) % colors.length; // Increment colorIndex
+      colorIndex = (colorIndex + 1) % colors.length;
     }
   </script>
 </body>
