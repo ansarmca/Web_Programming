@@ -4,11 +4,100 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registration Form</title>
-  <style>
-    .error { color: red; }
-    form { max-width: 400px; margin: auto; padding: 20px; }
-    label, input, select { display: block; width: 100%; margin: 5px 0; }
-    .submit-btn { margin-top: 10px; }
+  <style>/* General styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f4f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+form {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Form heading */
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Labels */
+label {
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+/* Input fields */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+  font-size: 16px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+/* Textarea */
+textarea {
+  resize: vertical;
+}
+
+/* Error messages */
+.error {
+  color: #e63946;
+  font-size: 0.9em;
+  margin-top: -5px;
+  margin-bottom: 10px;
+}
+
+/* Submit button */
+button.submit-btn {
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+button.submit-btn:hover {
+  background-color: #357abd;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  form {
+    padding: 15px;
+  }
+}
+
   </style>
 </head>
 <body>
