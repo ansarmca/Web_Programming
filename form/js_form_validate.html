@@ -7,7 +7,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   margin: 0;
 }
 
@@ -21,7 +20,6 @@ form {
 h2 {
   text-align: center;
   color: #333;
-
 }
 label {
   font-weight: bold;
@@ -43,8 +41,6 @@ textarea {
   transition: border-color 0.3s;
   font-size: 16px;
 }
-
-
 .error {
   color: #e63946;
   font-size: 0.9em;
@@ -60,14 +56,11 @@ button.submit-btn {
   border-radius: 4px;
   width: 100%;
 }
-
-
   </style>
 </head>
 <body>
-<div>
   <form id="registrationForm" onsubmit="return validateForm()">
-    <h2>Registration Form</h2>
+    <h2><u>Registration Form</u></h2>
     
     <label for="fname">First Name</label>
     <input type="text" id="fname" name="fname">
@@ -108,51 +101,43 @@ button.submit-btn {
 
     <button type="submit" class="submit-btn">Register</button>
   </form>
-  </div>
 
   <script>
   function validateForm() {
     let isValid = true;
 
-    // Clear all previous errors
     document.querySelectorAll('.error').forEach(error => error.textContent = '');
 
-    // First Name validation
     const fname = document.getElementById('fname').value.trim();
     if (fname === '') {
       document.getElementById('fnameError').textContent = 'First name is required';
       isValid = false;
     }
 
-    // Last Name validation
     const lname = document.getElementById('lname').value.trim();
     if (lname === '') {
       document.getElementById('lnameError').textContent = 'Last name is required';
       isValid = false;
     }
 
-    // Username validation
     const username = document.getElementById('username').value.trim();
     if (username === '') {
       document.getElementById('usernameError').textContent = 'Username is required';
       isValid = false;
     }
 
-    // Password validation
     const password = document.getElementById('password').value;
     if (password.length < 8) {
       document.getElementById('passwordError').textContent = 'Password must be at least 8 characters';
       isValid = false;
     }
 
-    // Gender validation
     const gender = document.getElementById('gender').value;
     if (gender === '') {
       document.getElementById('genderError').textContent = 'Gender is required';
       isValid = false;
     }
 
-    // Mobile validation
     const mobile = document.getElementById('mobile').value.trim();
     const mobilePattern = /^[0-9]{10}$/;
     if (!mobilePattern.test(mobile)) {
@@ -160,14 +145,12 @@ button.submit-btn {
       isValid = false;
     }
 
-    // Address validation
     const address = document.getElementById('address').value.trim();
     if (address === '') {
       document.getElementById('addressError').textContent = 'Address is required';
       isValid = false;
     }
 
-    // Email validation
     const email = document.getElementById('email').value.trim();
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
     if (!emailPattern.test(email)) {
@@ -175,13 +158,12 @@ button.submit-btn {
       isValid = false;
     }
 
-    // Show success message if form is valid
     if (isValid) {
       alert("Successfully registered");
-      return false; // Prevent form submission for demonstration
+      return false;
     }
 
-    return isValid; // Proceed with form submission if valid
+    return isValid;
   }
 </script>
 
