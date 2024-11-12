@@ -3,59 +3,61 @@
 <head>
   <title>Registration Form</title>
   <style>
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-}
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
 
-form {
-  background-color: #fff;
-  border-radius: 8px;
-  width: 100%;
-  max-width: 400px;
-}
+    form {
+      background-color: #fff;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 400px;
+    }
 
-h2 {
-  text-align: center;
-  color: #333;
-}
-label {
-  font-weight: bold;
-  color: #555;
-  margin-bottom: 5px;
-}
+    h2 {
+      text-align: center;
+      color: #333;
+    }
 
-input[type="text"],
-input[type="password"],
-input[type="email"],
-select,
-textarea {
-  width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-sizing: border-box;
-  transition: border-color 0.3s;
-  font-size: 16px;
-}
-.error {
-  color: #e63946;
-  font-size: 0.9em;
-  margin-top: -5px;
-  margin-bottom: 10px;
-}
+    label {
+      font-weight: bold;
+      color: #555;
+      margin-bottom: 5px;
+    }
 
-button.submit-btn {
-  background-color: #4a90e2;
-  color: #fff;
-  border: none;
-  padding: 12px;
-  border-radius: 4px;
-  width: 100%;
-}
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+      transition: border-color 0.3s;
+      font-size: 16px;
+    }
+
+    .error {
+      color: #e63946;
+      font-size: 0.9em;
+      margin-top: -5px;
+      margin-bottom: 10px;
+    }
+
+    button.submit-btn {
+      background-color: #4a90e2;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 4px;
+      width: 100%;
+    }
   </style>
 </head>
 <body>
@@ -77,6 +79,10 @@ button.submit-btn {
     <label for="password">Password</label>
     <input type="password" id="password" name="password">
     <div id="passwordError" class="error"></div>
+
+    <label for="confirmPassword">Confirm Password</label>
+    <input type="password" id="confirmPassword" name="confirmPassword">
+    <div id="confirmPasswordError" class="error"></div>
 
     <label for="gender">Gender</label>
     <select id="gender" name="gender">
@@ -103,70 +109,74 @@ button.submit-btn {
   </form>
 
   <script>
-  function validateForm() {
-    let isValid = true;
+    function validateForm() {
+      let isValid = true;
 
-    document.querySelectorAll('.error').forEach(error => error.textContent = '');
+      document.querySelectorAll('.error').forEach(error => error.textContent = '');
 
-    const fname = document.getElementById('fname').value.trim();
-    if (fname === '') {
-      document.getElementById('fnameError').textContent = 'First name is required';
-      isValid = false;
+      const fname = document.getElementById('fname').value.trim();
+      if (fname === '') {
+        document.getElementById('fnameError').textContent = 'First name is required';
+        isValid = false;
+      }
+
+      const lname = document.getElementById('lname').value.trim();
+      if (lname === '') {
+        document.getElementById('lnameError').textContent = 'Last name is required';
+        isValid = false;
+      }
+
+      const username = document.getElementById('username').value.trim();
+      if (username === '') {
+        document.getElementById('usernameError').textContent = 'Username is required';
+        isValid = false;
+      }
+
+      const password = document.getElementById('password').value;
+      if (password.length < 8) {
+        document.getElementById('passwordError').textContent = 'Password must be at least 8 characters';
+        isValid = false;
+      }
+
+      const confirmPassword = document.getElementById('confirmPassword').value;
+      if (confirmPassword !== password) {
+        document.getElementById('confirmPasswordError').textContent = 'Passwords do not match';
+        isValid = false;
+      }
+
+      const gender = document.getElementById('gender').value;
+      if (gender === '') {
+        document.getElementById('genderError').textContent = 'Gender is required';
+        isValid = false;
+      }
+
+      const mobile = document.getElementById('mobile').value.trim();
+      const mobilePattern = /^[0-9]{10}$/;
+      if (!mobilePattern.test(mobile)) {
+        document.getElementById('mobileError').textContent = 'Mobile must be 10 digits';
+        isValid = false;
+      }
+
+      const address = document.getElementById('address').value.trim();
+      if (address === '') {
+        document.getElementById('addressError').textContent = 'Address is required';
+        isValid = false;
+      }
+
+      const email = document.getElementById('email').value.trim();
+      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+      if (!emailPattern.test(email)) {
+        document.getElementById('emailError').textContent = 'Invalid email format';
+        isValid = false;
+      }
+
+      if (isValid) {
+        alert("Successfully registered");
+        return false;
+      }
+
+      return isValid;
     }
-
-    const lname = document.getElementById('lname').value.trim();
-    if (lname === '') {
-      document.getElementById('lnameError').textContent = 'Last name is required';
-      isValid = false;
-    }
-
-    const username = document.getElementById('username').value.trim();
-    if (username === '') {
-      document.getElementById('usernameError').textContent = 'Username is required';
-      isValid = false;
-    }
-
-    const password = document.getElementById('password').value;
-    if (password.length < 8) {
-      document.getElementById('passwordError').textContent = 'Password must be at least 8 characters';
-      isValid = false;
-    }
-
-    const gender = document.getElementById('gender').value;
-    if (gender === '') {
-      document.getElementById('genderError').textContent = 'Gender is required';
-      isValid = false;
-    }
-
-    const mobile = document.getElementById('mobile').value.trim();
-    const mobilePattern = /^[0-9]{10}$/;
-    if (!mobilePattern.test(mobile)) {
-      document.getElementById('mobileError').textContent = 'Mobile must be 10 digits';
-      isValid = false;
-    }
-
-    const address = document.getElementById('address').value.trim();
-    if (address === '') {
-      document.getElementById('addressError').textContent = 'Address is required';
-      isValid = false;
-    }
-
-    const email = document.getElementById('email').value.trim();
-    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-    if (!emailPattern.test(email)) {
-      document.getElementById('emailError').textContent = 'Invalid email format';
-      isValid = false;
-    }
-
-    if (isValid) {
-      alert("Successfully registered");
-      return false;
-    }
-
-    return isValid;
-  }
-</script>
-
-
+  </script>
 </body>
 </html>
