@@ -19,37 +19,25 @@
 </head>
 <body>
     <h1>Student Names</h1>
-
     <?php
-    // Array of student names
-    $students = ["Alice", "Bob", "Charlie", "David", "Eve"];
+            $students = ["Alice", "Bob", "Charlie", "David", "Eve"];
 
-    echo "<h2>Original Array</h2>";
-    echo "<pre>";
-    print_r($students);
-    echo "</pre>";
+            echo "<h2>Original Array</h2>";
+            echo "<pre>";
+            print_r($students);
+            echo "</pre>";
 
-    // Sort in ascending order
-    sort($students);
-    echo "<h2>Array Sorted with sort()</h2>";
-    echo "<pre>";
-    print_r($students);
-    echo "</pre>";
+            asort($students);
+            echo "<h2>Array Sorted with asort(): </h2>";
+            echo "<pre>";
+            print_r($students);
+            echo "</pre>";
 
-    // Reset array to original and use asort()
-    $students = ["Alice", "Bob", "Charlie", "David", "Eve"];
-    asort($students);
-    echo "<h2>Array Sorted with asort() (Maintains Keys)</h2>";
-    echo "<pre>";
-    print_r($students);
-    echo "</pre>";
-
-    // Sort in descending order using arsort()
-    arsort($students);
-    echo "<h2>Array Sorted with arsort() (Maintains Keys)</h2>";
-    echo "<pre>";
-    print_r($students);
-    echo "</pre>";
+            arsort($students);
+            echo "<h2>Array Sorted with arsort(): </h2>";
+            echo "<pre>";
+            print_r($students);
+            echo "</pre>";
     ?>
 </body>
 </html>
