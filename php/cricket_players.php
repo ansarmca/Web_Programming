@@ -26,8 +26,17 @@
             <th>Player Name</th>
         </tr>
         <?php
-        $players = array(
-            "Rohit Sharma","Virat Kohli","KL Rahul","Shubman Gill","Suryakumar Yadav","Hardik Pandya"
+       $players = array(
+            "Rohit Sharma",
+            "Virat Kohli",
+            "KL Rahul",
+            "Shubman Gill",
+            "Suryakumar Yadav",
+            "Hardik Pandya",
+            "Ravindra Jadeja",
+            "Jasprit Bumrah",
+            "Mohammed Shami",
+            "Kuldeep Yadav"
         );
 
         foreach ($players as $player) {
