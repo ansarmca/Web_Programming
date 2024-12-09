@@ -8,6 +8,6 @@ function fibonacci($n) {
 }
 
 echo "Fibonacci Series: ";
-for ($i = 0; $i <= 10; $i++) {
+for ($i = 0; $i <= 15; $i++) {
     echo fibonacci($i) . " ";
 }
