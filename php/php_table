@@ -1,3 +1,25 @@
+CREATE DATABASE mydatabase;
+
+USE mydatabase;
+
+CREATE TABLE employees (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    department VARCHAR(50) NOT NULL,
+    salary DECIMAL(10, 2) NOT NULL
+);
+
+INSERT INTO employees (name, email, department, salary) VALUES
+('John Doe', 'john@example.com', 'IT', 50000.00),
+('Jane Smith', 'jane@example.com', 'HR', 45000.00),
+('Michael Brown', 'michael@example.com', 'Finance', 60000.00);
+
+
+
+
+
+
 <?php
 $host = "localhost";
 $username = "root";
