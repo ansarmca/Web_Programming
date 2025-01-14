@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yearly Calendar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    #calendar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .month {
+      border: 1px solid #000;
+      margin: 10px;
+      padding: 10px;
+      width: 200px;
+      text-align: left;
+    }
+    .month h3 {
+      text-align: center;
+      margin: 5px 0;
+    }
+    .days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      text-align: center;
+      font-size: 12px;
+    }
+    .day {
+      padding: 5px;
+    }
+    .day-header {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Yearly Calendar</h1>
+  <input type="number" id="yearInput" placeholder="Enter Year" min="1900" max="2100">
+  <button onclick="generateCalendar()">Generate Calendar</button>
+  <div id="calendar"></div>
+
+  <script>
+    function generateCalendar() {
+      const year = document.getElementById("yearInput").value;
+      if (!year || year < 1900 || year > 2100) {
+        alert("Please enter a valid year between 1900 and 2100.");
+        return;
+      }
+
+      const calendarContainer = document.getElementById("calendar");
+      calendarContainer.innerHTML = ""; // Clear previous calendar
+
+      const months = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+      ];
+      const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+      for (let month = 0; month < 12; month++) {
+        const monthDiv = document.createElement("div");
+        monthDiv.className = "month";
+
+        const monthTitle = document.createElement("h3");
+        monthTitle.textContent = months[month] + " " + year;
+        monthDiv.appendChild(monthTitle);
+
+        const daysDiv = document.createElement("div");
+        daysDiv.className = "days";
+
+        // Add day headers
+        for (const day of daysOfWeek) {
+          const dayHeader = document.createElement("div");
+          dayHeader.className = "day day-header";
+          dayHeader.textContent = day;
+          daysDiv.appendChild(dayHeader);
+        }
+
+        // Get the first day of the month and the total number of days
+        const firstDay = new Date(year, month, 1).getDay();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+        // Add empty slots for days before the first day of the month
+        for (let i = 0; i < firstDay; i++) {
+          const emptySlot = document.createElement("div");
+          emptySlot.className = "day";
+          daysDiv.appendChild(emptySlot);
+        }
+
+        // Add days of the month
+        for (let day = 1; day <= daysInMonth; day++) {
+          const daySlot = document.createElement("div");
+          daySlot.className = "day";
+          daySlot.textContent = day;
+          daysDiv.appendChild(daySlot);
+        }
+
+        monthDiv.appendChild(daysDiv);
+        calendarContainer.appendChild(monthDiv);
+      }
+    }
+  </script>
+</body>
+</html>
