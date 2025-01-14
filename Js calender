@@ -21,10 +21,7 @@
   <script>
     function createCalendar() {
       const year = document.getElementById("year").value;
-      if (!year || year < 1900 || year > 2100) {
-        alert("Enter a valid year between 1900 and 2100.");
-        return;
-      }
+      
 
       const calendar = document.getElementById("calendar");
       calendar.innerHTML = ""; // Clear existing calendar
