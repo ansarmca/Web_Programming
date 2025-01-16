@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Exam</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .question {
+            margin: 20px 0;
+        }
+        .question p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+        .options li {
+            margin: 10px 0;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Online Exam</h1>
+        <form id="examForm">
+            <div class="question">
+                <p>1. What is the capital of France?</p>
+                <ul class="options">
+                    <li><label><input type="radio" name="q1" value="Paris"> Paris</label></li>
+                    <li><label><input type="radio" name="q1" value="Berlin"> Berlin</label></li>
+                    <li><label><input type="radio" name="q1" value="Madrid"> Madrid</label></li>
+                </ul>
+            </div>
+            <div class="question">
+                <p>2. Which planet is known as the Red Planet?</p>
+                <ul class="options">
+                    <li><label><input type="radio" name="q2" value="Mars"> Mars</label></li>
+                    <li><label><input type="radio" name="q2" value="Jupiter"> Jupiter</label></li>
+                    <li><label><input type="radio" name="q2" value="Venus"> Venus</label></li>
+                </ul>
+            </div>
+            <div class="question">
+                <p>3. Who wrote 'Romeo and Juliet'?</p>
+                <ul class="options">
+                    <li><label><input type="radio" name="q3" value="Shakespeare"> William Shakespeare</label></li>
+                    <li><label><input type="radio" name="q3" value="Charles Dickens"> Charles Dickens</label></li>
+                    <li><label><input type="radio" name="q3" value="Jane Austen"> Jane Austen</label></li>
+                </ul>
+            </div>
+            <button type="button" onclick="submitExam()">Submit</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function submitExam() {
+            const answers = {
+                q1: "Paris",
+                q2: "Mars",
+                q3: "Shakespeare"
+            };
+
+            let score = 0;
+            const form = document.getElementById("examForm");
+            const formData = new FormData(form);
+
+            for (const [question, correctAnswer] of Object.entries(answers)) {
+                if (formData.get(question) === correctAnswer) {
+                    score++;
+                }
+            }
+
+            const resultDiv = document.getElementById("result");
+            resultDiv.textContent = `Your score: ${score} out of ${Object.keys(answers).length}`;
+        }
+    </script>
+</body>
+</html>
